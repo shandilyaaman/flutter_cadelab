@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
+import './bottombarview.dart';
 import './cards.dart';
 import './listview.dart';
+import './tabview.dart';
 
 class Home extends StatelessWidget {
   final double _cardHeight = 120.0;
@@ -15,10 +17,10 @@ class Home extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Dashboard'),
-        actions: <Widget>[
-          new Icon(Icons.access_alarm),
-          new Icon(Icons.access_alarm)
-        ],
+//        actions: <Widget>[
+//          new Icon(Icons.access_alarm),
+//          new Icon(Icons.access_alarm)
+//        ],
         elevation: 3.0,
       ),
       body: new Container(
@@ -47,6 +49,11 @@ class Home extends StatelessWidget {
                     child: new GestureDetector(
                         onTap: () {
                           print('button pressed');
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => MyTabView()),
+                          );
                         },
                         child: _cards.card(_cardHeight, _cardColorBlue,
                             'Tab View', Icons.tab)),
@@ -64,6 +71,11 @@ class Home extends StatelessWidget {
                       child: new GestureDetector(
                           onTap: () {
                             print('button pressed');
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => MyBottomBarView()),
+                            );
                           },
                           child: _cards.card(_cardHeight, _cardColorBlue,
                               'BottomBar View', Icons.space_bar))),
