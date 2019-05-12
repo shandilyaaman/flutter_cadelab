@@ -7,17 +7,14 @@ class MyListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
-      title: 'ListView',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('ListView'),
-          elevation: 3.0,
-        ),
-        body: Padding(
-          padding: EdgeInsets.all(10.0),
-          child: getHomePageReady(context),
-        ),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('ListView'),
+        elevation: 5.0,
+      ),
+      body: Padding(
+        padding: EdgeInsets.all(10.0),
+        child: getHomePageReady(context),
       ),
     );
   }

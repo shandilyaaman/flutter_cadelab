@@ -3,22 +3,19 @@ import 'package:flutter/material.dart';
 class MyTabView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Tab View',
-      home: DefaultTabController(
-          length: 2,
-          child: Scaffold(
-            appBar: AppBar(
-              title: Text('Tab View'),
-              elevation: 5.0,
-              bottom: TabBar(
-                tabs: createTabs(),
-                indicatorColor: Colors.amber,
-              ),
+    return DefaultTabController(
+        length: 2,
+        child: Scaffold(
+          appBar: AppBar(
+            title: Text('Tab View'),
+            elevation: 5.0,
+            bottom: TabBar(
+              tabs: createTabs(),
+              indicatorColor: Colors.amber,
             ),
-            body: _getHomePageReady(),
-          )),
-    );
+          ),
+          body: _getHomePageReady(),
+        ));
   }
 
   List<Widget> createTabs() {

@@ -8,8 +8,6 @@ import './tabview.dart';
 class Home extends StatelessWidget {
   final double _cardHeight = 120.0;
   final Color _cardColorBlue = Colors.blue;
-
-//  final Color _cardColorYellow = Colors.amber;
   final Cards _cards = Cards();
 
   @override
@@ -17,11 +15,7 @@ class Home extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Dashboard'),
-//        actions: <Widget>[
-//          new Icon(Icons.access_alarm),
-//          new Icon(Icons.access_alarm)
-//        ],
-        elevation: 3.0,
+        elevation: 5.0,
       ),
       body: new Container(
         child: Column(
@@ -74,7 +68,8 @@ class Home extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => MyBottomBarView()),
+                                builder: (context) => MyBottomBarView(),
+                              ),
                             );
                           },
                           child: _cards.card(_cardHeight, _cardColorBlue,

@@ -3,10 +3,7 @@ import 'package:flutter/material.dart';
 class MyBottomBarView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Bottombar View',
-      home: Home(),
-    );
+    return Home();
   }
 }
 
