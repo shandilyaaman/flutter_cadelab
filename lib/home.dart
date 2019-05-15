@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import './bottombarview.dart';
 import './cards.dart';
 import './listview.dart';
+import './restapicall.dart';
 import './tabview.dart';
 
 class Home extends StatelessWidget {
@@ -42,7 +43,6 @@ class Home extends StatelessWidget {
                   Expanded(
                     child: new GestureDetector(
                         onTap: () {
-                          print('button pressed');
                           Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -77,10 +77,14 @@ class Home extends StatelessWidget {
                   Expanded(
                     child: new GestureDetector(
                         onTap: () {
-                          print('button pressed');
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => RestApiExample()),
+                          );
                         },
                         child: _cards.card(_cardHeight, _cardColorBlue,
-                            'Appbar View', Icons.apps)),
+                            'REST API CALL', Icons.apps)),
                   )
                 ],
               )),
