@@ -4,7 +4,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-import './rest_api_example/post.dart';
+import './post.dart';
 
 class RestApiExample extends StatefulWidget {
   @override

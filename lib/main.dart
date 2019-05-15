@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-import './home.dart';
+import 'package:flutter_codelab/dashboard/home.dart';
 
 void main() {
   runApp(
     new MaterialApp(
-      title: "Trying",
+      title: "Code Lab",
       home: Home(),
     ),
   );

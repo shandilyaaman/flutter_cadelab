@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import './bottombarview.dart';
+import 'package:flutter_codelab/bottomnavigation/bottombarview.dart';
 import './cards.dart';
-import './listview.dart';
-import './restapicall.dart';
-import './tabview.dart';
+import 'package:flutter_codelab/listview/listview.dart';
+import 'package:flutter_codelab/rest_api_example/restapicall.dart';
+import 'package:flutter_codelab/tabview/tabview.dart';
 
 class Home extends StatelessWidget {
   final double _cardHeight = 120.0;
