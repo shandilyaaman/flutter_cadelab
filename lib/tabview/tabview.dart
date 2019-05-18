@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import './tabpage1.dart';
+import './tabpage2.dart';
 
 class MyTabView extends StatelessWidget {
   @override
@@ -11,7 +13,7 @@ class MyTabView extends StatelessWidget {
             elevation: 5.0,
             bottom: TabBar(
               tabs: createTabs(),
-              indicatorColor: Colors.amber,
+              indicatorColor: Colors.white,
             ),
           ),
           body: _getHomePageReady(),
@@ -32,10 +34,10 @@ class MyTabView extends StatelessWidget {
   Widget _getHomePageReady() {
     return TabBarView(children: [
       Center(
-        child: Text('Tab 1 Page'),
+        child: TabPage1(),
       ),
       Center(
-        child: Text('Tab 2 Page'),
+        child: TabPage2(),
       )
     ]);
   }
