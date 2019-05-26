@@ -1,6 +1,6 @@
 # flutter_codelab
 
-A Flutter CodeLab
+<b>A Flutter CodeLab</b>
 
 - Splash Screen in flutter
 - Dashboard for application
@@ -13,6 +13,7 @@ A Flutter CodeLab
 - GridView
 - CardView
 - Appbar
+- Manage application backbutton navigation
 
 ## Getting Started
 
