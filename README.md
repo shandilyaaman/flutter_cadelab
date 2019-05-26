@@ -2,7 +2,7 @@
 
 <b>A Flutter CodeLab</b>
 
-- Splash Screen in flutter
+- <a href='https://github.com/shandilyaaman/flutter_cadelab/blob/master/lib/splash.dart'>Splash Screen</a> in flutter
 - Dashboard for application
 - ListView in flutter
 - Tabview in flutter
