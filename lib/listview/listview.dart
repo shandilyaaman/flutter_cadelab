@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_codelab/commons/commonwidgets.dart';
 
 import './city.dart';
 
@@ -8,10 +9,7 @@ class MyListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('ListView'),
-        elevation: 5.0,
-      ),
+      appBar: CommonWidgets.commonAppBar('ListView'),
       body: Padding(
         padding: EdgeInsets.all(10.0),
         child: getHomePageReady(context),

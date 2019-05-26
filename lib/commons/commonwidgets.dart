@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Cards {
-  Card card(_cardHeight, cardColor, cardName, cardIcon) {
+class CommonWidgets {
+  static Card card(_cardHeight, cardColor, cardName, cardIcon) {
     return Card(
       child: new Container(
         child: Column(
@@ -24,6 +24,13 @@ class Cards {
       elevation: 3.0,
       color: cardColor,
       borderOnForeground: true,
+    );
+  }
+
+  static AppBar commonAppBar(String title) {
+    return AppBar(
+      title: Text(title),
+      elevation: 5.0,
     );
   }
 }

@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_codelab/commons/commonwidgets.dart';
 import 'package:http/http.dart' as http;
 
 import './post.dart';
@@ -25,10 +26,7 @@ class HomeState extends State<RestApiExample> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Rest Api Example'),
-        elevation: 5.0,
-      ),
+      appBar: CommonWidgets.commonAppBar('Rest API'),
       body: Padding(
         padding: EdgeInsets.all(10.0),
         child: FutureBuilder<Post>(
