@@ -1,6 +1,19 @@
 # flutter_codelab
 
-A new Flutter application.
+<b>A Flutter CodeLab</b>
+
+- <a href='https://github.com/shandilyaaman/flutter_cadelab/blob/master/lib/splash.dart'>Splash Screen</a> in flutter
+- Dashboard for application
+- ListView in flutter
+- Tabview in flutter
+- Bottom bar navigation
+- Load image from network
+- Rest API call using dartfuture and async
+- Parsing json data
+- GridView
+- CardView
+- Appbar
+- Manage application backbutton navigation
 
 ## Getting Started
 
