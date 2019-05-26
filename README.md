@@ -1,6 +1,18 @@
 # flutter_codelab
 
-A new Flutter application.
+A Flutter CodeLab
+
+- Splash Screen in flutter
+- Dashboard for application
+- ListView in flutter
+- Tabview in flutter
+- Bottom bar navigation
+- Load image from network
+- Rest API call using dartfuture and async
+- Parsing json data
+- GridView
+- CardView
+- Appbar
 
 ## Getting Started
 
