@@ -14,7 +14,7 @@ class ListWithDynamicViews extends StatelessWidget {
     );
   }
 
-  Widget _renderitems(BuildContext context, int index) {
+  _renderitems(BuildContext context, int index) {
     int value = index % 3;
     if (value == 0) {
       return Text('Text at Value $value');
