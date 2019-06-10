@@ -14,7 +14,7 @@
 - CardView
 - Appbar
 - Manage application backbutton navigation
-
+- SQflite
 ## Getting Started
 
 This project is a starting point for a Flutter application.
