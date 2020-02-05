@@ -4,7 +4,8 @@
 
 - <a href='https://github.com/shandilyaaman/flutter_cadelab/blob/master/lib/splash.dart'>Splash Screen</a> in flutter
 - Dashboard for application
-- ListView in flutter
+- ListView
+- ListView with dynamic views
 - Tabview in flutter
 - Bottom bar navigation
 - Load image from network
