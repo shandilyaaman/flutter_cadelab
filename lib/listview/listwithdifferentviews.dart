@@ -14,26 +14,41 @@ class ListWithDynamicViews extends StatelessWidget {
     );
   }
 
-  _renderitems(BuildContext context, int index) {
+  Widget _renderitems(BuildContext context, int index) {
     int value = index % 3;
+    Widget widget;
     if (value == 0) {
-      return Text('Text at Value $value');
+      widget = Text('TextView');
     } else if (value > 0 && value < 2) {
-      return ListTile(
+      widget = ListTile(
         title: Text('ListTile at value $value'),
         subtitle: Text('Subtitle for ListTile'),
       );
     } else if (value >= 2 && value < 10) {
-      return Row(
+      widget = Row(
         children: <Widget>[
           Image.asset(
             'assets/delhi.jpeg',
-            height: 100.0,
-            width: 100.0,
+            height: 50.0,
+            width: 50.0,
           ),
           Text('Delhi')
         ],
       );
     }
+    return GestureDetector(
+      child: widget,
+      onTap: () {
+        _showSnackBar(context, widget.toStringShort());
+      },
+    );
+  }
+
+  _showSnackBar(BuildContext context, String string) {
+    final SnackBar objSnackbar = new SnackBar(
+      content: new Text("Item Clicked : " + string),
+      backgroundColor: Colors.amber,
+    );
+    Scaffold.of(context).showSnackBar(objSnackbar);
   }
 }
