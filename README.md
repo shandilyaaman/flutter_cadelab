@@ -16,6 +16,9 @@
 - Appbar
 - Manage application backbutton navigation
 - SQflite
+- PageView
+- Video Player with basic functionality
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
