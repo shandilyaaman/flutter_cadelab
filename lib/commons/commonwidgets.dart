@@ -33,4 +33,8 @@ class CommonWidgets {
       elevation: 5.0,
     );
   }
+
+  static Image imageFromNetwork(String image_url) {
+    return Image.network(image_url, fit: BoxFit.fill,);
+  }
 }

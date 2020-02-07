@@ -25,7 +25,6 @@ class MyState extends State<Splash> {
     startSplashScreenTimer();
   }
 
-
   @override
   void dispose() {
     print('disposed');

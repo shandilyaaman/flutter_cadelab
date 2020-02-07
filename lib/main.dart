@@ -12,6 +12,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return new MaterialApp(
       debugShowCheckedModeBanner: false,
+      color: Colors.green,
+      darkTheme: ThemeData.dark(),
+      themeMode: ThemeMode.dark,
+      initialRoute: 'splash',
       title: "Code Lab",
       home: Splash(),
       routes: <String, WidgetBuilder>{

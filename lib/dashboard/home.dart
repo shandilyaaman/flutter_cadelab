@@ -3,8 +3,10 @@ import 'package:flutter_codelab/bottomnavigation/bottombarview.dart';
 import 'package:flutter_codelab/commons/commonwidgets.dart';
 import 'package:flutter_codelab/listview/listviewtypes.dart';
 import 'package:flutter_codelab/rest_api_example/restapicall.dart';
-import 'package:flutter_codelab/tabview/tabview.dart';
 import 'package:flutter_codelab/sqlite/mainpage.dart';
+import 'package:flutter_codelab/tabview/tabview.dart';
+import 'package:flutter_codelab/videoplayer/videoplayerdemo.dart';
+import 'package:flutter_codelab/viewpager/viewpager.dart';
 
 class Home extends StatelessWidget {
   final double _cardHeight = 120.0;
@@ -43,8 +45,8 @@ class Home extends StatelessWidget {
                           MaterialPageRoute(builder: (context) => MyTabView()),
                         );
                       },
-                      child: CommonWidgets.card(
-                          _cardHeight, _cardColorBlue, 'Tab View', Icons.tab)),
+                      child: CommonWidgets.card(_cardHeight, _cardColorBlue,
+                          'Tab View', Icons.table_chart)),
                 )
               ],
             )),
@@ -67,7 +69,7 @@ class Home extends StatelessWidget {
                           );
                         },
                         child: CommonWidgets.card(_cardHeight, _cardColorBlue,
-                            'BottomBar View', Icons.space_bar))),
+                            'BottomBar View', Icons.border_bottom))),
                 Expanded(
                   child: new GestureDetector(
                       onTap: () {
@@ -78,7 +80,7 @@ class Home extends StatelessWidget {
                         );
                       },
                       child: CommonWidgets.card(_cardHeight, _cardColorBlue,
-                          'REST API CALL', Icons.apps)),
+                          'REST API CALL', Icons.web)),
                 )
               ],
             )),
@@ -99,7 +101,7 @@ class Home extends StatelessWidget {
                           );
                         },
                         child: CommonWidgets.card(_cardHeight, _cardColorBlue,
-                            'SQLite', Icons.pregnant_woman))),
+                            'SQLite', Icons.data_usage))),
                 Expanded(
                   child: new GestureDetector(
                       onTap: () {
@@ -107,6 +109,38 @@ class Home extends StatelessWidget {
                       },
                       child: CommonWidgets.card(
                           _cardHeight, _cardColorBlue, 'Map View', Icons.map)),
+                )
+              ],
+            )),
+          ),
+          Container(
+            margin: EdgeInsets.all(10.0),
+            child: IntrinsicHeight(
+                child: new Row(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: <Widget>[
+                Expanded(
+                    child: new GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ViewPagerSample()),
+                          );
+                        },
+                        child: CommonWidgets.card(_cardHeight, _cardColorBlue,
+                            'ViewPager', Icons.view_carousel))),
+                Expanded(
+                  child: new GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => VideoPlayerDemo()),
+                        );
+                      },
+                      child: CommonWidgets.card(_cardHeight, _cardColorBlue,
+                          'Video Player', Icons.music_video)),
                 )
               ],
             )),
