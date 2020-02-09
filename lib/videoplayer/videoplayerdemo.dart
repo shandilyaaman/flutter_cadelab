@@ -1,8 +1,11 @@
 import 'dart:async';
+import 'dart:ffi';
+import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_codelab/commons/commonwidgets.dart';
 import 'package:video_player/video_player.dart';
 
@@ -37,6 +40,7 @@ class _VideoPlayerState extends State {
     _controller = VideoPlayerController.network(
         'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4');
     _initVideoPlayerFuture = _controller.initialize();
+    _initVideoPlayerFuture.whenComplete(() => _controller.play());
     _controller.addListener(() {
       final bool isPlaying = _controller.value.isPlaying;
       if (isPlaying != _isPlaying) {
@@ -70,63 +74,109 @@ class _VideoPlayerState extends State {
       title: _position.toString(),
       home: Scaffold(
         appBar: CommonWidgets.commonAppBar("Video Sample"),
-        body: _createVideoPlayerWidget(),
-        floatingActionButton: FloatingActionButton(
-          onPressed: _controller.value.isPlaying
-              ? _controller.pause
-              : _controller.play,
-          child: Icon(
-            _controller.value.isPlaying ? Icons.pause : Icons.play_arrow,
-          ),
+        body: Column(
+          children: <Widget>[
+            Stack(
+              children: <Widget>[_videoPlayer(), _playerControllers()],
+            )
+          ],
         ),
       ),
     );
   }
 
-  Widget _createVideoPlayerWidget() {
+  Widget _videoPlayer() {
     return Container(
-      width: double.infinity,
-      height: 500.0,
-      child: Column(children: <Widget>[
-        _controller.value.initialized
+        color: Colors.black,
+        height: 300.0,
+        child: _isVideoControllerInitialized()
             ? AspectRatio(
                 aspectRatio: _controller.value.aspectRatio,
                 child: VideoPlayer(_controller),
               )
-            : Container(
-                width: double.infinity,
-                height: 500.0,
-                child: CircularProgressIndicator(),
-              ),
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: <Widget>[
-            Text(_position?.inHours.toString() +
-                ':' +
-                _position?.inMinutes.toString() +
-                ':' +
-                _position?.inSeconds.toString()),
-            Slider(
-              max: _duration?.inSeconds?.toDouble(),
-              value: _position?.inSeconds?.toDouble(),
-              min: 0,
-              activeColor: Colors.blue,
-              inactiveColor: Colors.black,
-              onChanged: (double value) {
-                _controller.seekTo(Duration(seconds: value.toInt()));
-              },
-            ),
-            Text(_duration?.inHours.toString() +
-                ':' +
-                _duration?.inMinutes.toString() +
-                ':' +
-                _duration?.inSeconds.toString())
-          ],
-        ),
-      ]),
+            : Center(child: CircularProgressIndicator()));
+  }
+
+  Widget _playerControllers() {
+    return Container(
+      color: _isPlaying ? Colors.transparent : Colors.black38,
+      height: 300.0,
+      width: double.infinity,
+      child: Stack(
+        children: <Widget>[
+          Container(
+              padding: EdgeInsets.all(8.0),
+              width: double.infinity,
+              height: double.infinity,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Text(
+                    _printDuration(_position),
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                  Container(
+                    height: 20.0,
+                    width: 250.0,
+                    child: Slider(
+                        max: _duration?.inSeconds?.toDouble(),
+                        value: _position != null
+                            ? _position?.inSeconds?.toDouble()
+                            : 0.0,
+                        min: 0,
+                        label: _position?.inSeconds?.toDouble().toString(),
+                        activeColor: Colors.green,
+                        inactiveColor: Colors.grey,
+                        onChanged: (double value) {
+                          _controller.seekTo(Duration(seconds: value.toInt()));
+                        }),
+                  ),
+                  Text(
+                    _printDuration(_duration),
+                    style: TextStyle(color: Colors.white),
+                  )
+                ],
+              )),
+          Container(
+              alignment: Alignment.center,
+              child: IconButton(
+                icon: _isPlaying
+                    ? Icon(
+                        Icons.pause,
+                        color: Colors.white,
+                        size: 50.0,
+                      )
+                    : Icon(
+                        Icons.play_arrow,
+                        color: Colors.white,
+                        size: 50.0,
+                      ),
+                onPressed: _playPause,
+              )),
+        ],
+      ),
     );
   }
+
+  String _printDuration(Duration duration) {
+    String twoDigits(int n) {
+      if (n >= 10) return "$n";
+      return "0$n";
+    }
+
+    String twoDigitMinutes = twoDigits(duration.inMinutes.remainder(60));
+    String twoDigitSeconds = twoDigits(duration.inSeconds.remainder(60));
+    return "${twoDigits(duration.inHours)}:$twoDigitMinutes:$twoDigitSeconds";
+  }
+
+  _playPause() {
+    _isPlaying ? _controller.pause() : _controller.play();
+  }
+
+  bool _isVideoControllerInitialized() => _controller.value.initialized;
 
   @override
   void dispose() {

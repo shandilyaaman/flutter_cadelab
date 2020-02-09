@@ -10,7 +10,7 @@ import 'package:flutter_codelab/viewpager/viewpager.dart';
 
 class Home extends StatelessWidget {
   final double _cardHeight = 120.0;
-  final Color _cardColorBlue = Colors.blue;
+  final Color _cardColor = Colors.green;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class Home extends StatelessWidget {
                                 builder: (context) => ListViewTypes()),
                           );
                         },
-                        child: CommonWidgets.card(_cardHeight, _cardColorBlue,
+                        child: CommonWidgets.card(_cardHeight, _cardColor,
                             'List View', Icons.list))),
                 Expanded(
                   child: new GestureDetector(
@@ -45,7 +45,7 @@ class Home extends StatelessWidget {
                           MaterialPageRoute(builder: (context) => MyTabView()),
                         );
                       },
-                      child: CommonWidgets.card(_cardHeight, _cardColorBlue,
+                      child: CommonWidgets.card(_cardHeight, _cardColor,
                           'Tab View', Icons.table_chart)),
                 )
               ],
@@ -68,7 +68,7 @@ class Home extends StatelessWidget {
                             ),
                           );
                         },
-                        child: CommonWidgets.card(_cardHeight, _cardColorBlue,
+                        child: CommonWidgets.card(_cardHeight, _cardColor,
                             'BottomBar View', Icons.border_bottom))),
                 Expanded(
                   child: new GestureDetector(
@@ -79,7 +79,7 @@ class Home extends StatelessWidget {
                               builder: (context) => RestApiExample()),
                         );
                       },
-                      child: CommonWidgets.card(_cardHeight, _cardColorBlue,
+                      child: CommonWidgets.card(_cardHeight, _cardColor,
                           'REST API CALL', Icons.web)),
                 )
               ],
@@ -100,7 +100,7 @@ class Home extends StatelessWidget {
                                 builder: (context) => SqlitePage()),
                           );
                         },
-                        child: CommonWidgets.card(_cardHeight, _cardColorBlue,
+                        child: CommonWidgets.card(_cardHeight, _cardColor,
                             'SQLite', Icons.data_usage))),
                 Expanded(
                   child: new GestureDetector(
@@ -108,7 +108,7 @@ class Home extends StatelessWidget {
                         print('button pressed');
                       },
                       child: CommonWidgets.card(
-                          _cardHeight, _cardColorBlue, 'Map View', Icons.map)),
+                          _cardHeight, _cardColor, 'Map View', Icons.map)),
                 )
               ],
             )),
@@ -128,7 +128,7 @@ class Home extends StatelessWidget {
                                 builder: (context) => ViewPagerSample()),
                           );
                         },
-                        child: CommonWidgets.card(_cardHeight, _cardColorBlue,
+                        child: CommonWidgets.card(_cardHeight, _cardColor,
                             'ViewPager', Icons.view_carousel))),
                 Expanded(
                   child: new GestureDetector(
@@ -139,7 +139,7 @@ class Home extends StatelessWidget {
                               builder: (context) => VideoPlayerDemo()),
                         );
                       },
-                      child: CommonWidgets.card(_cardHeight, _cardColorBlue,
+                      child: CommonWidgets.card(_cardHeight, _cardColor,
                           'Video Player', Icons.music_video)),
                 )
               ],

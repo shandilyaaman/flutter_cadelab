@@ -62,7 +62,7 @@ class MyListView extends StatelessWidget {
   _showSnackBar(BuildContext context, City item) {
     final SnackBar objSnackbar = new SnackBar(
       content: new Text("${item.name} is a city in ${item.country}"),
-      backgroundColor: Colors.amber,
+      backgroundColor: Colors.red,
     );
     Scaffold.of(context).showSnackBar(objSnackbar);
   }
