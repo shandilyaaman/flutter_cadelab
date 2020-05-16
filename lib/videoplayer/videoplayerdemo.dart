@@ -5,16 +5,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_codelab/commons/commonwidgets.dart';
 import 'package:video_player/video_player.dart';
 
 class VideoPlayerDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Video Player Demo',
-      home: VideoPlayerScreen(),
-    );
+    return VideoPlayerScreen();
   }
 }
 
