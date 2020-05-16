@@ -21,7 +21,6 @@ class Home extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
           Container(
-            margin: EdgeInsets.all(10.0),
             child: IntrinsicHeight(
                 child: new Row(
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -35,8 +34,8 @@ class Home extends StatelessWidget {
                                 builder: (context) => ListViewTypes()),
                           );
                         },
-                        child: CommonWidgets.card(_cardHeight, _cardColor,
-                            'List View', Icons.list))),
+                        child: CommonWidgets.card(
+                            _cardHeight, _cardColor, 'List View', Icons.list))),
                 Expanded(
                   child: new GestureDetector(
                       onTap: () {
@@ -52,7 +51,6 @@ class Home extends StatelessWidget {
             )),
           ),
           Container(
-            margin: EdgeInsets.all(10.0),
             child: IntrinsicHeight(
                 child: new Row(
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -79,14 +77,13 @@ class Home extends StatelessWidget {
                               builder: (context) => RestApiExample()),
                         );
                       },
-                      child: CommonWidgets.card(_cardHeight, _cardColor,
-                          'REST API CALL', Icons.web)),
+                      child: CommonWidgets.card(
+                          _cardHeight, _cardColor, 'REST API', Icons.web)),
                 )
               ],
             )),
           ),
           Container(
-            margin: EdgeInsets.all(10.0),
             child: IntrinsicHeight(
                 child: new Row(
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -114,7 +111,6 @@ class Home extends StatelessWidget {
             )),
           ),
           Container(
-            margin: EdgeInsets.all(10.0),
             child: IntrinsicHeight(
                 child: new Row(
               crossAxisAlignment: CrossAxisAlignment.stretch,

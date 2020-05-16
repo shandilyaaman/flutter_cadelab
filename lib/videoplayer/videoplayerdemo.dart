@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_codelab/commons/commonwidgets.dart';
 import 'package:video_player/video_player.dart';
 
 class VideoPlayerDemo extends StatelessWidget {
@@ -66,15 +67,13 @@ class _VideoPlayerState extends State<VideoPlayerScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Video Player'),
-        elevation: 5.0,
-      ),
+      appBar: CommonWidgets.commonAppBar('Video Player'),
       body: Column(
         children: <Widget>[
           Stack(
             children: <Widget>[_videoPlayer(), _playerControllers()],
-          )
+          ),
+
         ],
       ),
     );
