@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:ffi';
 import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
@@ -24,12 +23,12 @@ class VideoPlayerScreen extends StatefulWidget {
   _VideoPlayerState createState() => _VideoPlayerState();
 }
 
-class _VideoPlayerState extends State {
+class _VideoPlayerState extends State<VideoPlayerScreen> {
   VideoPlayerController _controller;
   Future<void> _initVideoPlayerFuture;
   bool _isPlaying = false;
-  Duration _duration;
-  Duration _position;
+  Duration _duration  = Duration();
+  Duration _position = Duration();
   bool _isEnd = false;
 
   @override
@@ -70,17 +69,17 @@ class _VideoPlayerState extends State {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: _position.toString(),
-      home: Scaffold(
-        appBar: CommonWidgets.commonAppBar("Video Sample"),
-        body: Column(
-          children: <Widget>[
-            Stack(
-              children: <Widget>[_videoPlayer(), _playerControllers()],
-            )
-          ],
-        ),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Video Player'),
+        elevation: 5.0,
+      ),
+      body: Column(
+        children: <Widget>[
+          Stack(
+            children: <Widget>[_videoPlayer(), _playerControllers()],
+          )
+        ],
       ),
     );
   }
@@ -88,7 +87,7 @@ class _VideoPlayerState extends State {
   Widget _videoPlayer() {
     return Container(
         color: Colors.black,
-        height: 300.0,
+        height: 250.0,
         child: _isVideoControllerInitialized()
             ? AspectRatio(
                 aspectRatio: _controller.value.aspectRatio,
@@ -100,12 +99,11 @@ class _VideoPlayerState extends State {
   Widget _playerControllers() {
     return Container(
       color: _isPlaying ? Colors.transparent : Colors.black38,
-      height: 300.0,
+      height: 250.0,
       width: double.infinity,
       child: Stack(
         children: <Widget>[
           Container(
-              padding: EdgeInsets.all(8.0),
               width: double.infinity,
               height: double.infinity,
               child: Row(
