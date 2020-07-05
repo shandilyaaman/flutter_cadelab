@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 
 class MyBottomBarView extends StatelessWidget {
@@ -16,11 +18,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int _currentIndex = 0;
-  List<Color> colors = [
-    Colors.greenAccent,
-    Colors.amberAccent,
-    Colors.black12
-  ];
+  List<Color> colors = [Colors.greenAccent, Colors.amberAccent, Colors.black12];
   List<Widget> _children = [
     Container(
       width: double.infinity,
@@ -63,16 +61,37 @@ class _HomeState extends State<Home> {
       elevation: 8.0,
       items: [
         BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            title: Text('Home'),
+            icon: Icon(
+              Icons.home,
+              color: Colors.white,
+            ),
+            title: Text(
+              "Home",
+              style:
+                  TextStyle(color: Colors.white, fontStyle: FontStyle.italic),
+            ),
             backgroundColor: Colors.green),
         BottomNavigationBarItem(
-            icon: Icon(Icons.hotel),
-            title: Text('Hotel'),
+            icon: Icon(
+              Icons.hotel,
+              color: Colors.white,
+            ),
+            title: Text(
+              'Hotel',
+              style:
+                  TextStyle(color: Colors.white, fontStyle: FontStyle.italic),
+            ),
             backgroundColor: Colors.amber),
         BottomNavigationBarItem(
-            icon: Icon(Icons.map),
-            title: Text('Map'),
+            icon: Icon(
+              Icons.map,
+              color: Colors.white,
+            ),
+            title: Text(
+              'Map',
+              style:
+                  TextStyle(color: Colors.white, fontStyle: FontStyle.italic),
+            ),
             backgroundColor: Colors.black)
       ],
     );

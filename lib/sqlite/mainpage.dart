@@ -11,7 +11,7 @@ class SqlitePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('sqflite'),
+        title: Text('SQLite'),
       ),
       body: Center(
         child: Column(

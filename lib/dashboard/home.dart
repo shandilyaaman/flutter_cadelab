@@ -67,7 +67,7 @@ class Home extends StatelessWidget {
                           );
                         },
                         child: CommonWidgets.card(_cardHeight, _cardColor,
-                            'BottomBar View', Icons.border_bottom))),
+                            'Bottombar Navigation', Icons.border_bottom))),
                 Expanded(
                   child: new GestureDetector(
                       onTap: () {
