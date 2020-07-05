@@ -10,7 +10,7 @@ import 'package:flutter_codelab/viewpager/viewpager.dart';
 
 class Home extends StatelessWidget {
   final double _cardHeight = 120.0;
-  final Color _cardColor = Colors.green;
+  final Color _cardColor = Colors.red[400];
 
   @override
   Widget build(BuildContext context) {
@@ -78,7 +78,7 @@ class Home extends StatelessWidget {
                         );
                       },
                       child: CommonWidgets.card(
-                          _cardHeight, _cardColor, 'REST API', Icons.web)),
+                          _cardHeight, _cardColor, 'Rest API', Icons.web)),
                 )
               ],
             )),

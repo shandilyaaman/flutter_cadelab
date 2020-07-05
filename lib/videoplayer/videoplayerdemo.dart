@@ -24,7 +24,7 @@ class _VideoPlayerState extends State<VideoPlayerScreen> {
   VideoPlayerController _controller;
   Future<void> _initVideoPlayerFuture;
   bool _isPlaying = false;
-  Duration _duration  = Duration();
+  Duration _duration = Duration();
   Duration _position = Duration();
   bool _isEnd = false;
 
@@ -70,19 +70,21 @@ class _VideoPlayerState extends State<VideoPlayerScreen> {
       appBar: CommonWidgets.commonAppBar('Video Player'),
       body: Column(
         children: <Widget>[
-          Stack(
-            children: <Widget>[_videoPlayer(), _playerControllers()],
+          Expanded(
+            child: Stack(
+              children: <Widget>[
+                Align(alignment: Alignment.center, child: _videoPlayer()),
+                _playerControllers()
+              ],
+            ),
           ),
-
         ],
       ),
     );
   }
 
   Widget _videoPlayer() {
-    return Container(
-        color: Colors.black,
-        height: 250.0,
+    return Expanded(
         child: _isVideoControllerInitialized()
             ? AspectRatio(
                 aspectRatio: _controller.value.aspectRatio,
@@ -94,8 +96,6 @@ class _VideoPlayerState extends State<VideoPlayerScreen> {
   Widget _playerControllers() {
     return Container(
       color: _isPlaying ? Colors.transparent : Colors.black38,
-      height: 250.0,
-      width: double.infinity,
       child: Stack(
         children: <Widget>[
           Container(
@@ -121,7 +121,7 @@ class _VideoPlayerState extends State<VideoPlayerScreen> {
                             : 0.0,
                         min: 0,
                         label: _position?.inSeconds?.toDouble().toString(),
-                        activeColor: Colors.green,
+                        activeColor: Colors.red,
                         inactiveColor: Colors.grey,
                         onChanged: (double value) {
                           _controller.seekTo(Duration(seconds: value.toInt()));

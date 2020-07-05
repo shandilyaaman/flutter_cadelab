@@ -15,15 +15,15 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         // Define the default brightness and colors.
         brightness: Brightness.dark,
-        primaryColor: Colors.green[800],
-        accentColor: Colors.green,
+        primaryColor: Colors.red,
+        accentColor: Colors.redAccent,
 
         // Define the default font family.
         fontFamily: 'Georgia',
 
         // Define the default TextTheme. Use this to specify the default
         // text styling for headlines, titles, bodies of text, and more.
-        textTheme: Typography.whiteMountainView,
+        textTheme: Typography.whiteRedmond,
       ),
       initialRoute: 'splash',
       title: "Code Lab",

@@ -12,7 +12,7 @@ class CommonWidgets {
             ),
             Text(
               cardName,
-              style: TextStyle(fontSize: 16, color: Colors.white),
+              style: TextStyle(fontSize: 16, color: Colors.white, fontFamily: 'Georgia'),
             )
           ],
           mainAxisAlignment: MainAxisAlignment.center,
