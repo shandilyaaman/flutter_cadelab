@@ -26,7 +26,6 @@ class _VideoPlayerState extends State<VideoPlayerScreen> {
   bool _isPlaying = false;
   Duration _duration = Duration();
   Duration _position = Duration();
-  bool _isEnd = false;
 
   @override
   void initState() {
@@ -54,12 +53,8 @@ class _VideoPlayerState extends State<VideoPlayerScreen> {
       });
       _duration?.compareTo(_position) == 0 ||
               _duration?.compareTo(_position) == -1
-          ? this.setState(() {
-              _isEnd = true;
-            })
-          : this.setState(() {
-              _isEnd = false;
-            });
+          ? this.setState(() {})
+          : this.setState(() {});
     });
     super.initState();
   }

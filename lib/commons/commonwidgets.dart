@@ -12,7 +12,8 @@ class CommonWidgets {
             ),
             Text(
               cardName,
-              style: TextStyle(fontSize: 16, color: Colors.white, fontFamily: 'Georgia'),
+              style: TextStyle(
+                  fontSize: 16, color: Colors.white, fontFamily: 'Georgia'),
             )
           ],
           mainAxisAlignment: MainAxisAlignment.center,
@@ -34,7 +35,10 @@ class CommonWidgets {
     );
   }
 
-  static Image imageFromNetwork(String image_url) {
-    return Image.network(image_url, fit: BoxFit.fill,);
+  static Image imageFromNetwork(String imageUrl) {
+    return Image.network(
+      imageUrl,
+      fit: BoxFit.fill,
+    );
   }
 }
